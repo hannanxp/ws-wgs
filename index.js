@@ -18,7 +18,6 @@ function showData() {
   showPanel2();
   showPanel3();
   showPanel4();
-  
 }
 
 function showPanel1() {
@@ -45,7 +44,7 @@ function showPanel3() {
   msg = randomStr(10);
   io.emit('show_panel_3', msg);
   
-  setTimeout(showPanel3, 4500);
+  setTimeout(showPanel3, 6500);
 }
 
 function showPanel4() {
@@ -54,6 +53,7 @@ function showPanel4() {
   msg = randomStr(10);
   io.emit('show_panel_4', msg);
   
+  setTimeout(showPanel4, 5500);
 }
 
 app.use('/s', express.static(__dirname + '/node_modules/'));
