@@ -14,7 +14,25 @@ function randomStr(length) {
 }
 
 function showData() {
-  console.log("Hello");
+  
+  var msg;
+  
+  msg = randomStr(10);
+  console.log(msg);
+  io.emit('show_panel_1', msg);
+  
+  msg = randomStr(10);
+  console.log(msg);
+  io.emit('show_panel_2', msg);
+  
+  msg = randomStr(10);
+  console.log(msg);
+  io.emit('show_panel_3', msg);
+  
+  msg = randomStr(10);
+  console.log(msg);
+  io.emit('show_panel_4', msg);
+  
   setTimeout(showData, 3000);
 }
 
@@ -28,9 +46,7 @@ app.get('/', (req, res) => {
 });
 
 io.on('connection', (socket) => {
-  socket.on('chat message', (msg) => {
-    io.emit('chat message', msg);
-  });
+  //
 });
 
 http.listen(3000, () => {
