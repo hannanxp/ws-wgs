@@ -14,29 +14,47 @@ function randomStr(length) {
 }
 
 function showData() {
+  showPanel1();
+  showPanel2();
+  showPanel3();
+  showPanel4();
   
+}
+
+function showPanel1() {
   var msg;
   
   msg = randomStr(10);
-  console.log(msg);
   io.emit('show_panel_1', msg);
   
-  msg = randomStr(10);
-  console.log(msg);
-  io.emit('show_panel_2', msg);
-  
-  msg = randomStr(10);
-  console.log(msg);
-  io.emit('show_panel_3', msg);
-  
-  msg = randomStr(10);
-  console.log(msg);
-  io.emit('show_panel_4', msg);
-  
-  setTimeout(showData, 3000);
+  setTimeout(showPanel1, 2500);
 }
 
+function showPanel2() {
+  var msg;
+  
+  msg = randomStr(10);
+  io.emit('show_panel_2', msg);
+  
+  setTimeout(showPanel2, 300);
+}
 
+function showPanel3() {
+  var msg;
+  
+  msg = randomStr(10);
+  io.emit('show_panel_3', msg);
+  
+  setTimeout(showPanel3, 4500);
+}
+
+function showPanel4() {
+  var msg;
+  
+  msg = randomStr(10);
+  io.emit('show_panel_4', msg);
+  
+}
 
 app.use('/s', express.static(__dirname + '/node_modules/'));
 
