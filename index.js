@@ -1,6 +1,9 @@
-var app = require('express')();
+var express = require('express'); // Get the module
+var app = express(); // Create express by calling the prototype in var express
 var http = require('http').createServer(app);
 var io = require('socket.io')(http);
+
+app.use('/s', express.static(__dirname + '/node_modules/'));
 
 app.get('/', (req, res) => {
   //res.sendFile(__dirname + '/index.html');
