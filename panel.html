@@ -31,6 +31,21 @@ and open the template in the editor.
       $(function () {
         var socket = io();
 
+        socket.on('show_panel_1', function(msg){
+          $('#item1').html(msg);
+        });
+        
+        socket.on('show_panel_2', function(msg){
+          $('#item2').html(msg);
+        });
+        
+        socket.on('show_panel_3', function(msg){
+          $('#item3').html(msg);
+        });
+        
+        socket.on('show_panel_4', function(msg){
+          $('#item4').html(msg);
+        });
 
       });
     </script>
@@ -46,7 +61,7 @@ and open the template in the editor.
               <h5>Panel 1</h5>
             </div>
             <div class="card-body">
-              Body
+              <div id="item1"></div>
             </div>
           </div>
         </div>
@@ -57,7 +72,7 @@ and open the template in the editor.
               <h5>Panel 2</h5>
             </div>
             <div class="card-body">
-              Body
+              <div id="item2"></div>
             </div>
           </div>
         </div>
@@ -70,7 +85,7 @@ and open the template in the editor.
               <h5>Panel 3</h5>
             </div>
             <div class="card-body">
-              Body
+              <div id="item3"></div>
             </div>
           </div>
         </div>
@@ -81,7 +96,7 @@ and open the template in the editor.
               <h5>Panel 4</h5>
             </div>
             <div class="card-body">
-              Body
+              <div id="item4"></div>
             </div>
           </div>
         </div>
