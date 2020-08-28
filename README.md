@@ -8,7 +8,11 @@ Socket Example
 
 
 ## Usage
--   `node index.js 3001`
-(3001) is web server port, it is optional, will use 80 by default is omitted
+-  `node index.js <webserver-port> <websocket-port>`
+-  example: `node index.js 3001 3000`
+-  or: `node index.js`
+
+default webserver-port : 80
+default websocket-port : 3000
 
 then, access with browser: http://localhost:3001
