@@ -45,4 +45,9 @@ ws.on('connection', ws => {
     ws.send('show_panel_2' + ":" + msg);
   }, 300);
   
+  ws.on('message', function incoming(message) {
+    ws.send(message);
+  });
+
+  
 })

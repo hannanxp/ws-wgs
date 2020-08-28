@@ -43,9 +43,26 @@ and open the template in the editor.
             $('#item1').html(msg);
           } else if (channel == 'show_panel_2') {
             $('#item2').html(msg);
+          } else if (channel == 'show_panel_3') {
+            $('#item3').html(msg);
           }
           
           
+        });
+        
+        function randomStr(length) {
+          var result           = '';
+          var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+          var charactersLength = characters.length;
+          for ( var i = 0; i < length; i++ ) {
+            result += characters.charAt(Math.floor(Math.random() * charactersLength));
+          }
+          return result;
+        }
+        
+        $("#btn-update").click(function(){
+          var msg = randomStr(10);
+          socket.send('show_panel_3' + ":" + msg);
         });
 
       });
@@ -74,6 +91,30 @@ and open the template in the editor.
             </div>
             <div class="card-body">
               <div id="item2"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-md-6 my-panel">
+          <div class="card">
+            <div class="card-header">
+              <h5>Panel 3</h5>
+            </div>
+            <div class="card-body">
+              <div id="item3"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 my-panel">
+          <div class="card">
+            <div class="card-header">
+              <h5>Form</h5>
+            </div>
+            <div class="card-body">
+              <botton id="btn-update" class="btn btn-primary">Update Panel 3</botton>
             </div>
           </div>
         </div>
