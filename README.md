@@ -9,6 +9,6 @@ Socket Example
 
 ## Usage
 -   `node index.js 3001`
-(3001) is web server port, it is optional, will user 80 by default is omitted
+(3001) is web server port, it is optional, will use 80 by default is omitted
 
 then, access with browser: http://localhost:3001
