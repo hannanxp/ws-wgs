@@ -25,10 +25,12 @@ and open the template in the editor.
 
     <script src="s/jquery/dist/jquery.min.js"></script>
     <script src="s/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="j/config.js"></script>
 
     <script>
       $(function () {
-        var socket = new WebSocket('ws://localhost:3000');
+        
+        var socket = new WebSocket('ws://' + appWsHostname + ':' + appWsPort);
 
         // Listen for messages
         socket.addEventListener('message', function (event) {

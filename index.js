@@ -15,6 +15,7 @@ function randomStr(length) {
 }
 
 app.use('/s', express.static(__dirname + '/node_modules/'));
+app.use('/j', express.static(__dirname + '/js/'));
 
 app.get('/', (req, res) => {
   //res.sendFile(__dirname + '/index.html');
