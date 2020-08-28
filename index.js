@@ -44,7 +44,7 @@ function showPanel3() {
   msg = randomStr(10);
   io.emit('show_panel_3', msg);
   
-  setTimeout(showPanel3, 6500);
+  setTimeout(showPanel3, 1000);
 }
 
 function showPanel4() {
@@ -53,7 +53,7 @@ function showPanel4() {
   msg = randomStr(10);
   io.emit('show_panel_4', msg);
   
-  setTimeout(showPanel4, 5500);
+  setTimeout(showPanel4, 3500);
 }
 
 app.use('/s', express.static(__dirname + '/node_modules/'));
@@ -67,8 +67,15 @@ io.on('connection', (socket) => {
   //
 });
 
-http.listen(3000, () => {
-  console.log('listening on *:3000');
+
+var myArgs = process.argv.slice(2);
+var port = 80;
+if (myArgs.length > 0) {
+  port = myArgs[0];
+}
+
+http.listen(port, () => {
+  console.log('listening on *:' + port);
   
   showData();
   
