@@ -36,7 +36,12 @@ var ws = new WebSocket.Server({ port: 3000 });
 ws.on('connection', ws => {
   setInterval(function(){ 
     msg = randomStr(10);
+    ws.send('show_panel_1' + ":" + msg);
+  }, 2500);
+  
+  setInterval(function(){ 
+    msg = randomStr(10);
     ws.send('show_panel_2' + ":" + msg);
-  }, 1000);
+  }, 300);
   
 })

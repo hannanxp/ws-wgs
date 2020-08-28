@@ -32,8 +32,22 @@ and open the template in the editor.
 
         // Listen for messages
         socket.addEventListener('message', function (event) {
-          console.log(event);
-          $('#item1').html(event.data);
+          
+          var str = event.data.split(":");
+          var channel = str[0];
+          var msg = str[1];
+          
+          if (channel == 'show_panel_1') {
+            $('#item1').html(msg);
+          } else if (channel == 'show_panel_2') {
+            $('#item2').html(msg);
+          } else if (channel == 'show_panel_3') {
+            $('#item3').html(msg); 
+          } else if (channel == 'show_panel_4') {
+            $('#item4').html(msg);
+          }
+          
+          
         });
 
       });
