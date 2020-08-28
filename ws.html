@@ -30,6 +30,7 @@ and open the template in the editor.
     <script>
       $(function () {
         
+        // Create websocket connection
         var socket = new WebSocket('ws://' + appWsHostname + ':' + appWsPort);
 
         // Listen for messages
@@ -50,6 +51,9 @@ and open the template in the editor.
           
         });
         
+        /**
+         * Produce random alphanumeric string (same format with server)
+         */
         function randomStr(length) {
           var result           = '';
           var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
@@ -60,6 +64,7 @@ and open the template in the editor.
           return result;
         }
         
+        // button click event, send message to server
         $("#btn-update").click(function(){
           var msg = randomStr(10);
           socket.send('show_panel_3' + ":" + msg);
